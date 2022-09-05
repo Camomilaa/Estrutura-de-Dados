@@ -1,3 +1,5 @@
+package Aula_2.Exercicios;
+
 import java.util.HashSet;
 import java.util.Scanner;
 
