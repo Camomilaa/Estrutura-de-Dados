@@ -136,4 +136,26 @@ public class ListaLigada {
         }
         return -1;
     }
+
+    public String mostrarItem(int num){
+        No noTemp = primeiro;
+        for(int i = 1; i <= num; i++){
+            if(i==num){
+                return String.valueOf(noTemp.elemento);
+            }
+            noTemp = noTemp.prox;
+        }
+        return "-1";
+    }
+
+    public ListaLigada juntarListas(ListaLigada l1, ListaLigada l2){
+        ListaLigada listaJunta = new ListaLigada();
+        for(int i=1; i <= l1.contarNos(); i++){
+            listaJunta.inserirFinal(l1.mostrarItem(i));
+        }
+        for(int i=1; i<= l2.contarNos(); i++){
+            listaJunta.inserirFinal(l2.mostrarItem(i));
+        }
+        return listaJunta;
+    }
 }

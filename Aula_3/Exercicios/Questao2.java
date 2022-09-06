@@ -1,126 +1,51 @@
 package Aula_3.Exercicios;
 
+import java.io.*;
+
 public class Questao2 {
-    public static void main(String args[]){
+    public static void main(String args[]) throws IOException {
         ListaLigada listaNoiva = new ListaLigada();
         ListaLigada listaNoivo = new ListaLigada();
+        ListaLigada listaConjunta = new ListaLigada();
+        String aux = "";
 
-        listaNoiva.inserirInicio("Sheila");
-        listaNoiva.inserirFinal("Sandra");
-        listaNoiva.inserirMeio("Daenerys", 2);
-        listaNoiva.inserirMeio("Jon", 2);
-        listaNoiva.inserirMeio("Bruce", 2);
-        listaNoiva.inserirMeio("Jennifer", 2);
-        listaNoiva.inserirMeio("Larissa", 2);
-        listaNoiva.inserirMeio("Justin", 2);
-        listaNoiva.inserirMeio("Norma", 2);
-        listaNoiva.inserirMeio("Aegon", 2);
-        listaNoiva.inserirMeio("Abraham", 2);
-        listaNoiva.inserirMeio("Cintia", 2);
-        listaNoiva.inserirMeio("Paula", 2);
-        listaNoiva.inserirMeio("Harry", 2);
-        listaNoiva.inserirMeio("Joana", 2);
-        listaNoiva.inserirMeio("Guilia", 2);
-        listaNoiva.inserirMeio("Lorenlai", 2);
-        listaNoiva.inserirMeio("Alvaro", 2);
-        listaNoiva.inserirMeio("Ziraldo", 2);
-        listaNoiva.inserirMeio("Ismael", 2);
-        listaNoiva.inserirMeio("Marcelo", 2);
-        listaNoiva.inserirMeio("Victor", 2);
-        listaNoiva.inserirMeio("Thamirys", 2);
-        listaNoiva.inserirMeio("Ismeiow", 2);
-        listaNoiva.inserirMeio("Misa", 2);
-        listaNoiva.inserirMeio("Levi", 2);
-        listaNoiva.inserirMeio("Eren", 2);
-        listaNoiva.inserirMeio("Nami", 2);
-        listaNoiva.inserirMeio("Sona", 2);
-        listaNoiva.inserirMeio("Rosa", 2);
-        listaNoiva.inserirMeio("Bonnie", 2);
-        listaNoiva.inserirMeio("Shane", 2);
-        listaNoiva.inserirMeio("Fabrizio", 2);
-        listaNoiva.inserirMeio("Emilia", 2);
-        listaNoiva.inserirMeio("Morgana", 2);
-        listaNoiva.inserirMeio("Ravena", 2);
-        listaNoiva.inserirMeio("Ramona", 2);
-        listaNoiva.inserirMeio("Falafel", 2);
-        listaNoiva.inserirMeio("Zoe", 2);
-        listaNoiva.inserirMeio("Blue Ivy", 2);
-        listaNoiva.inserirMeio("Ashley", 2);
-        listaNoiva.inserirMeio("Elizabeth", 2);
-        listaNoiva.inserirMeio("Booker", 2);
-        listaNoiva.inserirMeio("Sandra", 2);
-        listaNoiva.inserirMeio("Syndra", 2);
-        listaNoiva.inserirMeio("Pablo", 2);
-        listaNoiva.inserirMeio("Gloria", 2);
-        listaNoiva.inserirMeio("Aretuza", 2);
-        listaNoiva.inserirMeio("Samira", 2);
-        listaNoiva.inserirMeio("Igor", 2);
-        listaNoiva.inserirMeio("Wanessa", 2);
-        listaNoiva.inserirMeio("Kimberly", 2);
-        listaNoiva.inserirMeio("Gwendolyn", 2);
-        listaNoiva.inserirMeio("Vanessa", 2);
-        listaNoiva.inserirMeio("Camila", 2);
-        listaNoiva.inserirMeio("Hilda", 2);
-        listaNoiva.inserirMeio("Leon", 2);
-        listaNoiva.inserirMeio("Ada", 2);
-        listaNoiva.inserirMeio("Chris", 2);
-        listaNoiva.inserirMeio("Claire", 2);
+        //Criação da lista do noivo com base em um arquivo repleto de nomes
+        File noivo = new File("C:\\Users\\Gadrit\\IdeaProjects\\Estrutura de Dados\\src\\Aula_3\\Exercicios\\ListaNoivo.txt");
+        if(noivo.exists()){
+            FileReader fro = new FileReader(noivo);
+            BufferedReader bro = new BufferedReader(fro);
+            while(bro.ready()){
+                listaNoivo.inserirFinal(bro.readLine());
+            }
+        }
 
-        listaNoivo.inserirInicio("Celso");
-        listaNoivo.inserirFinal("Casimiro");
-        listaNoivo.inserirMeio("João", 2);
-        listaNoivo.inserirMeio("Giovanni", 2);
-        listaNoivo.inserirMeio("Glaidson", 2);
-        listaNoivo.inserirMeio("Natalia", 2);
-        listaNoivo.inserirMeio("Zeri", 2);
-        listaNoivo.inserirMeio("Renata", 2);
-        listaNoivo.inserirMeio("Tacila", 2);
-        listaNoivo.inserirMeio("Aragorn", 2);
-        listaNoivo.inserirMeio("Lindsay", 2);
-        listaNoivo.inserirMeio("Bella", 2);
-        listaNoivo.inserirMeio("Jill", 2);
-        listaNoivo.inserirMeio("Anitta", 2);
-        listaNoivo.inserirMeio("Luisa", 2);
-        listaNoivo.inserirMeio("Larissa", 2);
-        listaNoivo.inserirMeio("Hannah", 2);
-        listaNoivo.inserirMeio("Violeta", 2);
-        listaNoivo.inserirMeio("Powder", 2);
-        listaNoivo.inserirMeio("Violet", 2);
-        listaNoivo.inserirMeio("Mylo", 2);
-        listaNoivo.inserirMeio("Claggor", 2);
-        listaNoivo.inserirMeio("Quinn", 2);
-        listaNoivo.inserirMeio("Katarina", 2);
-        listaNoivo.inserirMeio("Garen", 2);
-        listaNoivo.inserirMeio("Lux", 2);
-        listaNoivo.inserirMeio("Sylas", 2);
-        listaNoivo.inserirMeio("Swain", 2);
-        listaNoivo.inserirMeio("Zed", 2);
-        listaNoivo.inserirMeio("Darius", 2);
-        listaNoivo.inserirMeio("Draven", 2);
-        listaNoivo.inserirMeio("Ahri", 2);
-        listaNoivo.inserirMeio("Raphaella", 2);
-        listaNoivo.inserirMeio("Clarity", 2);
-        listaNoivo.inserirMeio("Halsey", 2);
-        listaNoivo.inserirMeio("Rihanna", 2);
-        listaNoivo.inserirMeio("Natty", 2);
-        listaNoivo.inserirMeio("Leila", 2);
-        listaNoivo.inserirMeio("Deive", 2);
-        listaNoivo.inserirMeio("Sibila", 2);
-        listaNoivo.inserirMeio("Esmeralda", 2);
-        listaNoivo.inserirMeio("Fernanda", 2);
-        listaNoivo.inserirMeio("Layla", 2);
-        listaNoivo.inserirMeio("Anna", 2);
-        listaNoivo.inserirMeio("Pansy", 2);
-        listaNoivo.inserirMeio("Phill", 2);
-        listaNoivo.inserirMeio("Vanda", 2);
-        listaNoivo.inserirMeio("Shirley", 2);
-        listaNoivo.inserirMeio("Donna", 2);
-        listaNoivo.inserirMeio("Carlos", 2);
-        listaNoivo.inserirMeio("Phinneas", 2);
-        listaNoivo.inserirMeio("Ferb", 2);
-        listaNoivo.inserirMeio("Karma", 2);
-        listaNoivo.inserirMeio("Diana", 2);
-        listaNoivo.inserirMeio("Solange", 2);
-        listaNoivo.mostrarLista();
+        //Criação da lista do noiva com base em um arquivo repleto de nomes
+        File noiva = new File("C:\\Users\\Gadrit\\IdeaProjects\\Estrutura de Dados\\src\\Aula_3\\Exercicios\\ListaNoiva.txt");
+        if(noiva.exists()){
+            FileReader fra = new FileReader(noiva);
+            BufferedReader bra = new BufferedReader(fra);
+            while(bra.ready()){
+                listaNoiva.inserirFinal(bra.readLine());
+            }
+        }
+
+        //juntando as listas
+        listaConjunta = listaConjunta.juntarListas(listaNoiva, listaNoivo);
+        int tamanhoLista = listaConjunta.contarNos();
+        //System.out.println(listaConjunta.mostrarItem(2).compareTo(listaConjunta.mostrarItem(3)));
+        for(int i = 1; i <= listaConjunta.contarNos(); i++){
+            for(int j = 1; j <= listaConjunta.contarNos()-1; j++){
+                if(listaConjunta.mostrarItem(j).compareTo(listaConjunta.mostrarItem(j+1)) > 0){
+                    aux = listaConjunta.mostrarItem(j);
+                    listaConjunta.remover(listaConjunta.mostrarItem(j));
+                    if(j+1 == tamanhoLista){
+                        listaConjunta.inserirFinal(aux);
+                    }else{
+                        listaConjunta.inserirMeio(aux, j+1);
+                    }
+                }
+            }
+        }
+        listaConjunta.mostrarLista();
     }
 }
