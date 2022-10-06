@@ -3,7 +3,7 @@ package Aula_6.Exercicios;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-public class Main {
+public class Questao2 {
     public static void main(String[] args) {
         Deque<Pessoa> deque = new ArrayDeque<>();
         deque.addLast(new Pessoa("Sheila", "31999999999", "pessoa1@estruturadedados.com"));
