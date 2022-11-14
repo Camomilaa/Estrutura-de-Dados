@@ -3,11 +3,17 @@ package Aula_8.Exercicios;
 class BST
 {
     private BSTNode raiz;
+    public int menor = Integer.MAX_VALUE;
+    public int maior = Integer.MIN_VALUE;
+    public int alturaDireita = 0;
+    public int alturaEsquerda = 0;
+
 
     public BST()
     {
         raiz = null;
     }
+
     public boolean vazio()
     {
         return raiz == null;
@@ -169,6 +175,90 @@ class BST
             postorder(r.getEsquerda());
             postorder(r.getDireita());
             System.out.print(r.getChave() +" ");
+        }
+    }
+
+    public int maior(){
+        maior = Integer.MIN_VALUE;
+        return maior(raiz);
+    }
+
+    private int maior(BSTNode r){
+        if(r.getChave() > maior){
+            maior = r.getChave();
+            if(r.direita != null){
+                maior = maior(r.direita);
+            }
+        }
+        return maior;
+    }
+
+    public int menor(){
+        menor = Integer.MAX_VALUE;
+        return menor(raiz);
+    }
+    private int menor(BSTNode r){
+        if(r.getChave() < menor){
+            menor = r.getChave();
+            if(r.esquerda != null){
+                menor = menor(r.esquerda);
+            }
+        }
+        return menor;
+    }
+
+    public int altura(){
+        alturaDireita = 0;
+        alturaEsquerda = 0;
+        return altura(raiz);
+    }
+
+    private int alturaEsquerda(BSTNode r){
+        if(r.esquerda != null){
+            alturaEsquerda++;
+            alturaEsquerda(r.esquerda);
+        } else{
+            alturaEsquerda++;
+        }
+        return alturaEsquerda;
+    }
+
+    private int alturaDireita(BSTNode r){
+        if(r.direita != null){
+            alturaDireita++;
+            alturaDireita(r.direita);
+        } else{
+            alturaDireita++;
+        }
+        return alturaDireita;
+    }
+
+    private int altura(BSTNode r){
+        alturaEsquerda = alturaEsquerda(r);
+        alturaDireita = alturaDireita(r);
+        if(alturaEsquerda > alturaDireita){
+            return alturaEsquerda;
+        } else if(alturaDireita > alturaEsquerda){
+            return alturaDireita;
+        } else{
+            return alturaEsquerda;
+        }
+    }
+
+    public void balanceada(){
+        alturaDireita = 0;
+        alturaEsquerda = 0;
+        balanceada(raiz);
+    }
+    private void balanceada(BSTNode r){
+        alturaEsquerda = alturaEsquerda(r);
+        alturaDireita = alturaDireita(r);
+        if(alturaEsquerda > alturaDireita){
+            System.out.println("Desbalanceada para esquerda");
+        } else if(alturaDireita > alturaEsquerda){
+            System.out.println("Desbalanceada para direita");
+        } else{
+            System.out.println("Balanceada");
         }
     }
 }

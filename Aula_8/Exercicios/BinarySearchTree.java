@@ -1,5 +1,6 @@
 package Aula_8.Exercicios;
 
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class BinarySearchTree
@@ -20,6 +21,10 @@ public class BinarySearchTree
             System.out.println("3. procurar");
             System.out.println("4. contar nodos");
             System.out.println("5. checar se está vazia");
+            System.out.println("6. maior nodo");
+            System.out.println("7. menor nodo");
+            System.out.println("8. altura");
+            System.out.println("9. balanceada?");
 
             int choice = scan.nextInt();
             switch (choice)
@@ -41,6 +46,18 @@ public class BinarySearchTree
                     break;
                 case 5 :
                     System.out.println("Vazio? = "+ bst.vazio());
+                    break;
+                case 6:
+                    System.out.println(bst.maior());
+                    break;
+                case 7:
+                    System.out.println(bst.menor());
+                    break;
+                case 8:
+                    System.out.println(bst.altura());
+                    break;
+                case 9:
+                    bst.balanceada();
                     break;
                 default :
                     System.out.println("Entrada Invalida \n ");
